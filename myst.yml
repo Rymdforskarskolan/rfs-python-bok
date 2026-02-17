@@ -11,7 +11,6 @@ project:
     - Marcell Ziegler
   # github:
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
-  jupyter: true
 
 
   toc:
