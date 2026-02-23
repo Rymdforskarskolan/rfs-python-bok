@@ -42,3 +42,24 @@ import math
 ```
 
 i början av en Pythonfil för att importera resterande mattefunktioner. Du kommer åt det genom att anropa `math.<funktion>()`. Mer om hur man anropar funktioner kommer också senare. Här följer en tabell av intressanta funktioner från `math`.
+
+| Funktion           | Användning                    | Beskrivning                                                                                                 |
+| ------------------ | ----------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `math.sqrt()`      | `math.sqrt(2)`                | Ger kvadratroten ur ett tal.                                                                                |
+| `math.floor()`     | `math.floor(3.7)`             | Ger närmaste heltal *under* angivet värde.                                                                  |
+| `math.ceil()`      | `math.ceil(5.2)`              | Ger närmaste heltal *över* angivet värde.                                                                   |
+| `math.factorial()` | `math.factorial(3)`           | Ger fakulteten av angivet värde.                                                                            |
+| `math.abs()`       | `math.abs(-3.2)`              | Ger absolutbeloppet (avståndet från 0, dvs. positivt oavsett vad).                                          |
+| `math.exp()`       | `math.exp(4)`                 | Ger naturliga exponentieringen av talet. ($e^a$, där $a$ är argumentet)                                     |
+| `math.log()`       | `math.log(5,[bas])`           | Ger logaritmen av angivet tal. Basen behöver inte anges, om den uteblir så används $e$, annars angiven bas. |
+| `math.sin()`       | `math.sin(2 * math.pi)`       | Ger sinus av värdet i radianer.                                                                             |
+| `math.cos()`       | `math.cos(3 * math.pi)`       | Ger cosinus av värdet i radianer.                                                                           |
+| `math.tan()`       | `math.tan((2 / 3) * math.pi)` | Ger tangens av värdet i radianer.                                                                           |
+| `math.degrees()`   | `math.degrees(2 * math.pi)`   | Ger värdet, angivet i radianer, konverterat till grader.                                                    |
+| `math.radians()`   | `math.radians(120)`           | Ger värdet, angivet i grader, konverterat till radianer.                                                    |
+
+```{hint} Vidare läsning för den intresserade
+:class: dropdown
+Detta är grunderna i Pythons matte. Du kan läsa vidare i dokumentationen: [Uttryck](https://docs.python.org/3/reference/expressions.html), [`math`](https://docs.python.org/3/library/math.html#module-math) och [inbyggda funktioner](https://docs.python.org/3/library/functions.html).
+
+```
