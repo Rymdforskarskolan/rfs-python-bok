@@ -19,6 +19,12 @@ project:
         - file: grunder/01-vad_ar_programmering.md
         - file: grunder/02-terminalen.md
         - file: grunder/03-hello-world.md
+        - title: Variabler, data och vad man vill göra med dem
+          children:
+            - file: grunder/variabler/01-hur_datorer_hanterar_data.md
+            - file: grunder/variabler/02-variabler.md
+            - file: grunder/variabler/03-datatyper_i_python.md
+            - file: grunder/variabler/04-aritmetik.md
         - file: grunder/04-kontroll.md
         - file: grunder/05-funktioner.md
     - title: Kapitel 2 - Mikrokontroller

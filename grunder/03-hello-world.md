@@ -58,7 +58,9 @@ I exemplet är `~` er hemmapp som beskrivet i förra kapitlet, och ni skulle öp
 
 Nu fortsätter vi genom att skapa en mapp som heter `introkurs` någonstans lämpligt och öppnar den i VSCode.
 
-![Video om hur man skapar mapp](../videos/skapa_mapp.mp4)
+```{figure} ../videos/skapa_mapp.mp4
+Hur man skapar en mapp
+```
 
 Därefter skapar vi en fil som heter `hello.py` och sedan skriver koden
 
@@ -67,11 +69,17 @@ Därefter skapar vi en fil som heter `hello.py` och sedan skriver koden
 print("Hello, World!")
 ```
 
-![Video om hur man skapar fil](../videos/skapa_fil.mp4)
+```{figure} ../videos/skapa_fil.mp4
+:class: wide
+Hur man skapar en fil
+```
 
 Det sista steget nu, är att köra filen.
 
-![Video om hur man kör en fil](../videos/kora_fil.mp4)
+```{figure} ../videos/kora_fil.mp4
+:class: wide
+Hur man kör en fil
+```
 
 Grattis, nu har din kod hälsat på världen!
 
