@@ -58,7 +58,12 @@ I exemplet är `~` er hemmapp som beskrivet i förra kapitlet, och ni skulle öp
 
 Nu fortsätter vi genom att skapa en mapp som heter `introkurs` någonstans lämpligt och öppnar den i VSCode.
 
+```{hint} Tips
+Musa över videorna för att förstora dem!
+```
+
 ```{figure} ../videos/skapa_mapp.mp4
+:class: zoomable
 Hur man skapar en mapp
 ```
 
@@ -70,14 +75,14 @@ print("Hello, World!")
 ```
 
 ```{figure} ../videos/skapa_fil.mp4
-:class: wide
+:class: zoomable
 Hur man skapar en fil
 ```
 
 Det sista steget nu, är att köra filen.
 
 ```{figure} ../videos/kora_fil.mp4
-:class: wide
+:class: zoomable
 Hur man kör en fil
 ```
 

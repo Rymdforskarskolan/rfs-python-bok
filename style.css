@@ -7,6 +7,18 @@ p {
     font-family: "Open Sans";
 }
 
+figure.zoomable video {
+    transition: transform 0.3s ease;
+}
+
+figure.zoomable video:hover {
+    transform: scale(1.4);
+    position: relative;
+    z-index: 9999;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    cursor: zoom-in;
+}
+
 /* .myst-top-nav {
     background-color: #00205b !important;
     box-shadow: 0 0 8px;
