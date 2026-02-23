@@ -6,9 +6,11 @@ Python är ett språk med s.k. *dynamiska typer*. Det betyder att en variabels t
 
 Ett heltalt i Python kallas en `int` som står för integer. Den kan ha godtycklig storlek och antalet bits anpassas dynamiskt till det du sätter in.
 
+Om du vill specificera stor heltal kan du lägga in understreck i talet utan att påverka värdet, för läslighet. Exempelvis är `100_000_000` ett giltigt heltal.
+
 ## Flyttal (decimaltal)
 
-Tal med decimaler lagras i typen `float`. Det är ett 64-bit IEE-754 flyttal som vi diskuterade några kapitel sedan. Du kan lagra decimaltal med ca. 16 decimalers precision i det.
+Tal med decimaler lagras i typen `float`. Det är ett 64-bit [IEE-754](https://en.wikipedia.org/wiki/IEEE_754) flyttal som vi diskuterade några kapitel sedan. Du kan lagra decimaltal med ca. 16 decimalers precision i det.
 
 Du kan specificera ett flyttal som ett vanligt decimaltal med decimalpunkt alltså `1.35` till exempel. Du kan också skriva de i grundpotensform som en miniräknare hade gjort. Några exempel: `100e2` är ekvivalent med $100 \cdot 10^2$, `1.52e-3` är ekvivalent med $1.52\cdot 10^{-3}$.
 
