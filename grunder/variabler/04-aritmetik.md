@@ -1,4 +1,4 @@
-# Aritmetik
+# Aritmetik och beräkningar
 
 Aritmetik innebär grundläggande manipulering och operationer på tal. Alltså: addition, subtraktion, multiplikation, division och {abbr}`modulus (rest vid division)`. I programmeringen skiljer vi på heltalsaritmetik och flyttalsaritmetik eftersom de har olika egenskaper. Det är nämligen så att heltal aldrig kan ha avrundningsfel, men flyttal kan i vissa operationer bära med sig avrundningsfel på grund av hur datorn lagrar flyttalen.
 
@@ -28,6 +28,12 @@ En unär operator arbetar på ett tal (ett värde).
 | ---      | ---                  | ---        | ---                                                                                                                                                                                    |
 | `-`      | Unär negation        | `-5`       | Negerar (gör negativt från positivt, eller vice versa) talet det ställs framför. Precis som i matten, men på grund av hur datorspråk funkar måste vi skilja på binärt och unärt minus. |
 | `+`      | Unärt plus           | `+3`       | Negerar *inte* värdet efter sig. Det vill säga gör ingenting. Det finns där för symmetri med unärt minus.                                                                              |
+
+## Tillsättande operatörer
+
+Det förekommer ofta att man vill justera värdet av en variabel. Säg att du vill ta en befintlig variabel och multiplicera dess värde med två sedan lagra resultatet i samma variabel. Alternativt vill du kanske lägga till 1 till en räknare för varje upprepning av en viss del av din algoritm. Då vill du använda tillsättande operatörer. För varje binär aritmetisk operator finns en tillhörande tillsättande operator.
+
+Ta addition som exempel. 
 
 ## Andra matematiska funktioner
 

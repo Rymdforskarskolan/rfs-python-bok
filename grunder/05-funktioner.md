@@ -1,1 +1,0 @@
-# Funktioner och upprepningsbar kod
