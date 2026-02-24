@@ -37,6 +37,14 @@ Det förekommer ofta att man vill justera värdet av en variabel. Säg att du vi
 
 Ta addition som exempel.
 
+```{code} python
+num = 3
+num += 2
+# num är nu 5
+```
+
+Här har vi använt oss av `+=`, den tillsättande additionsoperatorn. Med den säger vi "ta `num`, lägg till 2 och spara resultatet i `num`". Det finns även `-=`, `*=`, `/=` osv. för alla binära operatörer som nämns ovan.
+
 ## Andra matematiska funktioner
 
 Python kommer med relativt få mattefunktioner som inte explicit behöver importeras. De främsta inbyggda är `max(a,b)` och `min(a,b)`. De tar det största, resp. minsta, värdet av `a` och `b`. Vi har även `sum(...)` som ger summan av alla argument. Du har även `pow(b,e)` som ger `b**e` eller b{sup}`e`.
