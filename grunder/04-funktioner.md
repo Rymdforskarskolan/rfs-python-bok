@@ -268,4 +268,79 @@ Detta gör samma sak som vår kod innan, men nu har vi skapat variabeln `result`
 
 Som tidigare nämnt är det `snake_case` som gäller även här. Se till att namnge era funktioner på ett beskrivande sätt. `bar()` är ett jättedåligt namn på en funktion. Vi vill hellre kalla den för `add()` till exempel.
 
+## Hur man dokumenterar vad en funktion gör
 
+Om någon annan skall läsa din kod, eller om du ska läsa din egna kod om lång tid, är det ofta svårt att fatta exakt vad du menade. Därför har vi kommentarer och *docstrings*.
+
+En kommentar är en bit text som inte körs som kod. Det kan du använda för att beskriva vad som händer i koden. Den skrivs med en `#` i början av kommentaren och fortsätter till slutet av raden.
+
+```{code} python
+# En vanlig kommentar
+value = "Hej!" # En kommentar efter en kodrad.
+# Koden ovan körs fram till #
+```
+
+Vi har även ett mer kraftfullt verktyg: en docstring. Det är en särskild typ av sträng som kommer direkt efter en funktionssignatur och beskriver vad den gör. De kommer i två varianter: enradiga och flerradiga. Man skriver en docstring inom tre citattecken (`"""`). Vi börjar med enradiga.
+
+```{code} python
+:linenos:
+:emphasize-lines: 2
+def add(term1, term2):
+    """Compute term1 + term2"""
+
+    return term1 + term2
+```
+
+Dessa används för att beskriva enkla eller självklara funktioner. De skalla alltid skrivas i imperativ (Som en uppmaning: "beräkna ...", "plotta ..." etc.) och inte vara mer än 1-3 meningar. De skall också rymmas på en rad.
+
+Ibland har vi mer komplicerade funktioner, då vill vi dokumentera alla deras egenskaper, returvärden och parametrar. Då kan vi skriva flerradiga docstrings.
+
+```{code} python
+:linenos:
+:emphasize-lines: 2-11
+def add(term1, term2):
+    """
+    Compute term1 + term2
+
+    Parameters:
+        term1 (number): The first term in the addition
+        term2 (number): The second ther in the addition
+
+    Returns:
+        The sum om term1 + term2
+    """
+
+    return term1 + term2
+```
+
+Sådana docstrings inleds alltid med en kortfattad beskrivning, inte mer än 1-3 meningar. Därefter sammanfattas parametrarna (med datatyper, nummer i vårt fall) och returvärdena. Skulle det krävas vidare förklaring kan ett längre stycke skrivas på lämpligt ställe i docstringen. Det finns också många olika stiler att skriva dokumentation på, se till att välja en och var konsekvent, men det spelar ingen roll hur du skriver dem så länge rätt information är med och det är konsekvent i all din kod.
+
+Vi rekommenderar starkt att du dokumenterar alla dina funktioner med åtminstone en kort docstring så att både du och de som hjälper dig med din kod lättare förstår vad du tänkte skulle hända.
+
+## Att specificera typer för funktioner
+
+```{note}
+Precis som motsvarande del för variabel, är detta frivillig med intressant extraförståelse.
+```
+
+Det kan även vara intressant att specificera typer på ett sätt så VSCode och du förstår även i funktioner. Då kan man skriva en lite mer utförlig signatur. Här är ett exempel.
+
+```{code} python
+def add(term1: int, term2: int) -> int:
+    """Compute term1 + term2"""
+    return term1 + term2
+```
+
+För parametrar specificerar vi type med kolon följt av typen. Returvärdet skrivs efter en pilsymbol `->` som följer efter slutparentesen med innan slutliga kolon.
+
+Lägg märke till att vi antyder att vår funktion bara hanterar `int`:s, alltså heltal. Men vi klarar ju flyttal utan problem. Man kan då specificera att flera typer är okej. Det gör man genom att separera olika godkända typer med `|`.
+
+```{code} python
+def add(term1: int | float, term2: int | float) -> int | float:
+    """Compute term1 + term2"""
+    return term1 + term2
+```
+
+Nu hintar vi att funktionen klarar `int` eller `float` i båda parametrar och därför är returvärdet också antingen `int` eller `float`.
+
+Du kan specificera typ för 0 eller fler av dina parametrar, alltså behöver inte alla typer specificeras. Det är heller inte obligatoriskt att specificera returtyp. Om funktionen inte returnerar något är returtypen `None`.
