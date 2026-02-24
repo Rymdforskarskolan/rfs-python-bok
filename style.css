@@ -19,6 +19,13 @@ figure.zoomable video:hover {
     cursor: zoom-in;
 }
 
+div[data-name="outputs-container"] pre.font-thin {
+    font-weight: normal;
+    background-color: #5ca5ee1f;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 /* .myst-top-nav {
     background-color: #00205b !important;
     box-shadow: 0 0 8px;
