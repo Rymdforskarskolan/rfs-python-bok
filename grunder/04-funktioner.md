@@ -247,3 +247,25 @@ print(summa)
 ```
 
 På sista raden skriver vi sedan ut värdet i `summa`, genom att skicka det som argument till `print()`. När vi kollar resultatet i det [körda kodblocket ovan](#bar-cell) så ser vi att det stämmer med matten.
+
+## Lokala variabler i funktioner
+
+Det är fritt fram att skapa variabler även inom funktioner. De i en annan kontext än variabler definierade utanför funktioner så variabler inom funktioner slutar existera efter funktionen kört klart.
+
+Om vi driver vidare med exemplet `bar()` kan jag skapa en, visserligen onödig, variabel för att demonstrera detta.
+
+```{code} python
+:linenos:
+:emphasize-lines: 2
+def bar(term1, term2):
+    result = term1 + term2
+    return result
+```
+
+Detta gör samma sak som vår kod innan, men nu har vi skapat variabeln `result` vars värde sedan returneras. Efter funktionen är klar slutar `result` att existera.
+
+## Att namnge sina funktioner
+
+Som tidigare nämnt är det `snake_case` som gäller även här. Se till att namnge era funktioner på ett beskrivande sätt. `bar()` är ett jättedåligt namn på en funktion. Vi vill hellre kalla den för `add()` till exempel.
+
+
