@@ -6,6 +6,8 @@ Aritmetik innebär grundläggande manipulering och operationer på tal. Alltså:
 
 En *operator* är en matematisk funktion som *opererar*, arbetar, på ett eller fler värden. Ofta representeras en operator av en symbol, som `+` eller `-`. De operatörer som används inom aritmetiken kallar vi *aritmetiska operatörer*. Eller lite enklare: "matte-operatörer" inom programmeringens kontext.
 
+(binary-operators)=
+
 ## Binära operatörer
 
 En binär operator arbetar på två tal (två värden). Här följer en sammaställning av de som ni kan använda er av i Python.
@@ -33,7 +35,7 @@ En unär operator arbetar på ett tal (ett värde).
 
 Det förekommer ofta att man vill justera värdet av en variabel. Säg att du vill ta en befintlig variabel och multiplicera dess värde med två sedan lagra resultatet i samma variabel. Alternativt vill du kanske lägga till 1 till en räknare för varje upprepning av en viss del av din algoritm. Då vill du använda tillsättande operatörer. För varje binär aritmetisk operator finns en tillhörande tillsättande operator.
 
-Ta addition som exempel. 
+Ta addition som exempel.
 
 ## Andra matematiska funktioner
 

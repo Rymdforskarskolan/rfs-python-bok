@@ -1,5 +1,6 @@
 # Datatyper i Python
 
+(datatyper-i-python)=
 Python är ett språk med s.k. *dynamiska typer*. Det betyder att en variabels typ är inte spikad när den skapas, utan den kan ändras över tid. Däremot så har vid varje givet ögonblick varje variabel en typ. Det kan vara ett heltal, ett flyttal eller något helt annat. Python listar själv ut vad för typ en variabel ska ha, så det behöver du oftast inte skriva ned själv.
 
 ## Heltal
