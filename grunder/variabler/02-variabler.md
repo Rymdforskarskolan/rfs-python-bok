@@ -83,3 +83,24 @@ Det kan alltid bara finns ett värde kopplat till ett viss variabelnamn i ett vi
 [^python-int]: Pythons heltal är dynamiska, och kan bli precis så stora som du vill. De har också alltid tecken.
 
 [^python-floats]: Python lagrar sina flyttal som 64-bit som standard, du behöver alltså inte oroa dig över precision för vardagliga skäl.
+
+## Att specificera en variabels typ
+
+```{note} Info
+Det som står under denna rubrik är frivillig extraförståelse, du behöver inte kunna detta för att förstå resten. Det kan däremot vara intressant om du är bekväm med det du lärt dig hittills.
+```
+
+Ibland kanske man vill specificera vilket typ det är tänkt att en variabel ska ha. Det kan vara användbart för dig, eller en annan programmerare som kollar på din kod, för att veta vad som var tänkt från början. Python är som sagt dynamiskt typad, och kommer därför inte att bry sig om dina specifikationer när koden väl körs, men VSCode hjälper dig att hålla dig till dem genom felmarkeringar i dina kodfiler om du gör fel.
+
+Att specificera en typ kallas för en *type hint*. Namnet antyder på det som redan nämnts: det är endast ett råd inte ett krav. Man skriver en type hint på följande vis.
+
+```{code} python
+my_int: int = 5
+my_float: float = 3.2
+my_string: str = "Hej!"
+...
+```
+
+Du skriver alltså ett kolon efter variabelnamnet när du *först skapar det* och anger därefter en datatyp. Datatyper behandlas i nästa kapitel.
+
+Man kan göra väldigt avancerade saker med type hints, men denna grundläggande förståelse kommer att räcka för er.
