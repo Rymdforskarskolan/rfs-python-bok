@@ -7,6 +7,8 @@ Programmering är i grundet två saker i följande ordning:
 
 Punkt 1. är betydligt viktigare att förstå sig på än punkt 2. En algoritm kan ofta implementeras i vilket programmeringsspråk som helst, det enda som kommer att skilja är hur den *stavas*.
 
+(algoritmer)=
+
 ## Att författa algoritmer
 
 Ordboken säger följande:
