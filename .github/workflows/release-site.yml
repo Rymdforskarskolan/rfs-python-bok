@@ -1,0 +1,57 @@
+name: Build and Publish Static Site Release Asset
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    concurrency:
+      group: release-${{ github.event.release.id }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies and register kernel
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyter-book ipykernel
+          python -m ipykernel install --name=python3 --display-name "Python 3 (ipykernel)" --sys-prefix
+
+      - name: Build HTML Assets
+        run: jupyter book build --html --execute
+
+      - name: Package built site
+        run: |
+          tar -C _build -czf "site-${{ github.event.release.tag_name }}.tar.gz" html
+
+      - name: Check if asset already exists
+        id: check_asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          ASSET_NAME: site-${{ github.event.release.tag_name }}.tar.gz
+        run: |
+          ASSET_ID=$(gh release view "$RELEASE_TAG" --json assets --jq ".assets[] | select(.name == \"$ASSET_NAME\") | .id")
+          if [ -n "$ASSET_ID" ]; then
+            echo "Asset $ASSET_NAME already exists on release $RELEASE_TAG; skipping upload."
+            echo "upload_needed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "upload_needed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload release asset
+        if: steps.check_asset.outputs.upload_needed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" "site-${{ github.event.release.tag_name }}.tar.gz"
