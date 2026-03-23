@@ -2,6 +2,11 @@ name: Build and Publish Static Site Release Asset
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to build from and upload artifact to"
+        required: true
+        type: string
   release:
     types: [published]
 
@@ -13,12 +18,16 @@ permissions:
 
 jobs:
   build-and-publish:
+    env:
+      RELEASE_TAG: ${{ github.event_name == 'release' && github.event.release.tag_name || inputs.tag }}
     concurrency:
-      group: release-${{ github.event.release.id }}
+      group: release-${{ github.event_name == 'release' && github.event.release.id || inputs.tag }}
       cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.RELEASE_TAG }}
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -36,14 +45,13 @@ jobs:
 
       - name: Package built site
         run: |
-          tar -C _build -czf "site-${{ github.event.release.tag_name }}.tar.gz" html
+          tar -C _build -czf "site-${{ env.RELEASE_TAG }}.tar.gz" html
 
       - name: Check if asset already exists
         id: check_asset
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
-          ASSET_NAME: site-${{ github.event.release.tag_name }}.tar.gz
+          ASSET_NAME: site-${{ env.RELEASE_TAG }}.tar.gz
         run: |
           ASSET_ID=$(gh release view "$RELEASE_TAG" --json assets --jq ".assets[] | select(.name == \"$ASSET_NAME\") | .id")
           if [ -n "$ASSET_ID" ]; then
@@ -58,4 +66,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload "${{ github.event.release.tag_name }}" "site-${{ github.event.release.tag_name }}.tar.gz"
+          gh release upload "${{ env.RELEASE_TAG }}" "site-${{ env.RELEASE_TAG }}.tar.gz"
