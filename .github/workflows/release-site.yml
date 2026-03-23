@@ -1,6 +1,7 @@
 name: Build and Publish Static Site Release Asset
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
