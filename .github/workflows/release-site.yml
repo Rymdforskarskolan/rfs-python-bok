@@ -4,6 +4,9 @@ on:
   release:
     types: [published]
 
+env:
+  BASE_URL: "/bok"
+
 permissions:
   contents: write
 
