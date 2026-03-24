@@ -25,6 +25,16 @@ div[data-name="outputs-container"] pre.font-thin {
     padding: 10px;
     border-radius: 5px;
 }
+pre.myst-code-body code {
+    background-color: transparent;
+}
+
+code {
+    /* --tw-prose-code: #40a02b !important; */
+    background-color: color-mix(in srgb, gray 15%, white 100%);
+    padding: .05em .3em;
+    border-radius: .3em;
+}
 
 /* .myst-top-nav {
     background-color: #00205b !important;
