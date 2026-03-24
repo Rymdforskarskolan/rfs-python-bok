@@ -26,8 +26,11 @@ project:
             - file: grunder/variabler/03-datatyper_i_python.md
             - file: grunder/variabler/04-aritmetik.md
             - file: grunder/variabler/05-strangar_och_text.md
+            - file: grunder/variabler/06-att_andra_datatyp.md
+            - file: grunder/variabler/07-input.md
         - file: grunder/04-funktioner.md
         - file: grunder/05-kontroll.md
+        - file: grunder/06-slingor.md
     - title: Kapitel 2 - Mikrokontroller
       children:
         - file: mikrokontroller/01-vad_ar_en_mikrokontroller.md
