@@ -6,6 +6,7 @@ kernelspec:
 
 # Kollektioner
 
+(collections)=
 En kollektion är en datatyp som innehåller mer än ett värde. De kollektioner som finns inbyggda i Python är `list`, `tuple`, `set` och `dict`. De alla är i grunden sätt att samla relaterad data, men de uppnår det på lite olika sätt.
 
 ## `list` — En ordnad lista med föränderlig längd
@@ -246,4 +247,32 @@ my_dict = {"Arne": 15, "John": "ej svarat", "Leja": 32, "Mårten": "ej svarat"}
 ("Leja", 32) in my_dict.items()  # True
 ("Bertil", 2) in my_dict.items() # False
 
+```
+
+### `in` för strängar
+
+Operatorn funkar lite kontraintuitivt för en `str`. Vi har ju nämnt att en sträng betraktas som en lista av karaktärer. `in`-operatorn beter sig som att strängen i högerled egentligen är mängden av alla sammanhängande delsträngar. En sammanhängande delsträng är 1 eller fler på varandra följande karaktärer i den ursprungliga strängen. Ett exempel för strängen `"Hej!"`, dess delsträngar är:
+
+- `"H"`
+- `"e"`
+- `"j"`
+- `"!"`
+- `"He"`
+- `"ej"`
+- `"j!"`
+- `"Hej"`
+- `"ej!"`
+- `"Hej!"`
+
+Vi kollar alltså om vänsterledet är någon av de delsträngarna. Här kommer några exempel.
+
+```python
+"h" in "Hej!" # False
+"H" in "Hej!" # True
+"Hj" in "Hej!" # False
+"j!" in "Hej!" # True
+
+"c" in "abcdefghijklmnopqrstuvwxyzåäö" # True
+"abc" in "abcefghijklmnopqrstuvwxyzåäö" # True
+"df" in "abcdefghijklmnopqrstuvwxyzåäö" # False
 ```
