@@ -44,4 +44,5 @@ site:
     style: "./style.css"
     favicon: ./favicon.ico
     logo: ./kopia-av-rymdforskarskolan-transparent.png
+    logo_url: "https://www.astronomicentrum.se/portal"
     hide_outline: false

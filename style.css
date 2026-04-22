@@ -33,12 +33,30 @@ h3 code,
 h4 code,
 h5 code,
 h6 code {
-    /* --tw-prose-code: #40a02b !important; */
-    background-color: color-mix(in srgb, gray 15%, white 100%);
+    background-color: var(--code-bg);
     padding: .05em .3em;
     border-radius: .3em;
 }
 
+.article {
+    --tw-prose-code: purple;
+    --code-bg: color-mix(in srgb, gray 15%, white 100%);
+}
+
+.article:is(.dark *) {
+    --tw-prose-code: mediumorchid;
+    --code-bg: rgb(43, 42, 56);
+}
+/* code {
+    color: purple !important;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    code {
+        color: mediumorchid !important;
+    }
+} */
 /* .myst-top-nav {
     background-color: #00205b !important;
     box-shadow: 0 0 8px;
