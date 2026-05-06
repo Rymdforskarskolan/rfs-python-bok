@@ -154,7 +154,7 @@ Det finns också en intressant teknologi som heter JIT, Just-in-Time, kompilerin
 
 Att tolka, eller interpretera, kod innebär att källkoden läses direkt då du skall köra den, vid *run-time*. En programtolk, också kallad *interpreter*, läser din kod och kör den (ofta) rad för rad. Konvertering från källkod till maskinkod sker direkt, och maskinkoden körs också direkt. Python är ett tolkat språk till exempel.
 
-Detta bär på fördelen att du kan köra samma Python-kod överallt det finns en Pythontolk. Och det finns en Pythontolk för väldigt många platformar. Datorerna ni använder har något som heter [CPython](https://en.wikipedia.org/wiki/Bytecode) som sin tolk, medan era mikrokontroller använder sig av [CircuitPython](https://circuitpython.org). Skriver du en tolk för en given CPU-typ och {abbr}`OS (operativsystem)` kan du köra all Pythonkällkod där.
+Detta bär på fördelen att du kan köra samma Python-kod överallt det finns en Pythontolk. Och det finns en Pythontolk för väldigt många platformar. Datorerna ni använder har något som heter [CPython](https://en.wikipedia.org/wiki/CPython) som sin tolk, medan era mikrokontroller använder sig av [CircuitPython](https://circuitpython.org). Skriver du en tolk för en given CPU-typ och {abbr}`OS (operativsystem)` kan du köra all Pythonkällkod där.
 
 Den andra fördelen är att du kan distribuera källkoden i mänskligt läsbart format och ändå köra denna överallt. Detta kan man inte göra med kompilerad kod, då det inte är läsbart för någon (åtminstone ingen lekman).
 
