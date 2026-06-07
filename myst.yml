@@ -31,6 +31,12 @@ project:
         - file: grunder/04-funktioner.md
         - file: grunder/05-kontroll.md
         - file: grunder/06-slingor.md
+        - title: Klasser & objekt
+          children:
+            - file: grunder/klasser/01-vad_ar_en_klass.md
+            - file: grunder/klasser/02-klassresa_med_stjarnor.md
+            - file: grunder/klasser/03-metoder.md
+            - file: grunder/klasser/04-klassattribut_och_klassfkner.md
     - title: Kapitel 2 - Mikrokontroller
       children:
         - file: mikrokontroller/01-vad_ar_en_mikrokontroller.md
