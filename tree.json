@@ -1,0 +1,9 @@
+{
+  "Star": [
+    { "spectral_class": [] },
+    { "luminosity": [] },
+    { "surface_temp_K": [] },
+    { "diameter": [] },
+    { "mass": [] }
+  ]
+}
