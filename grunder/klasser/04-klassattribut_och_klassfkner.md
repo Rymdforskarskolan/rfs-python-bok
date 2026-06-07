@@ -234,8 +234,8 @@ Vi testar nu och ser:
 ```{code-cell} ipython
 :tags: []
 
-print(f"F är giltig: {Star.is_valid_main_sequence_spectral_class("F")}")
-print(f"Z är giltig: {Star.is_valid_main_sequence_spectral_class("Z")}")
+print(f"F är giltig: {Star.is_valid_main_sequence_spectral_class('F')}")
+print(f"Z är giltig: {Star.is_valid_main_sequence_spectral_class('Z')}")
 ```
 
 Se hur vi inte behövde ett objekt för detta. Vi anropar statiska metoder på klassen i första hand. Dock kommer alla instanser också ha en kopia av metoden.
