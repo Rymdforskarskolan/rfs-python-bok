@@ -145,3 +145,97 @@ print(our_sun)
 ```
 
 Ser du hur vår metod räknade om åt oss? Detta är riktigt användbart ifall man har mer än ett sätt att konstruera ett objekt.
+
+## Statiska metoder
+
+Ibland är det fiffigt att låta en funktion som egentligen inte behöver varken klassattribut eller instansattribut ligga under en klass för organisationens skull. Säg i vårt stjärnexempel att vi vill kunna lätt verifiera att en spektralklass är giltig för en huvudsekvensstjärna. I detta fall måste värdet vara ett av `"O", "B", "A", "F", "G", "K", "M"`.
+
+Denna verifiering kräver ingen data från varken klassen ellen en instans. Därför definierar vi den som _statisk_. Statiska metoder tar inga särskilda parametrar och behöver dekoreras med `@staticmethod`. Såhär kan detta se ut:
+
+```{code-cell} ipython
+:tags: [remove-input]
+class Star:
+    SOLAR_MASS = 1.989e30 # kg
+    SOLAR_LUMINOSITY = 3.828e26 # W
+    SOLAR_DIAMETER = 1.3927e9 # m
+
+
+    def __init__(
+        self,
+        spectral_class,
+        luminosity,
+        surface_temp_K,
+        diameter,
+        mass
+    ):
+        self.spectral_class = spectral_class
+        self.luminosity = luminosity
+        self.surface_temp_K = surface_temp_K
+        self.diameter = diameter
+        self.mass = mass
+
+    @classmethod
+    def from_solar_units(cls, spectral_class, luminosity, surface_temp_K, diameter, mass):
+        """
+        Instantiate Star based on solar units.
+
+        Parameters:
+            spectral_class (str): Spectral class of star, e.g. "O","B","A","F","G","K","M".
+            luminosity (float): Luminosity in solar luminosity
+            surface_temp_K (float): Surface temp in Kelvin
+            diameter (float): Diameter in solar diameters
+            mass (float): Mass in solar masses
+
+        Returns:
+            Star: a new Star object with the provided values converted to SI units.
+        """
+
+        mass *= cls.SOLAR_MASS
+        luminosity *= cls.SOLAR_LUMINOSITY
+        diameter *= cls.SOLAR_DIAMETER
+
+        return Star(spectral_class, luminosity, surface_temp_K, diameter, mass)
+
+    def __str__(self):
+        lines = [
+            "Vår stjärnas egenskaper:",
+            f"Spektralklass: {self.spectral_class}",
+            f"Luminositet: {self.luminosity} W",
+            f"Yttemperatur: {self.surface_temp_K} K",
+            f"Diameter: {self.diameter} m",
+            f"Massa: {self.mass} kg"
+        ]
+        return "\n".join(lines)
+
+    @staticmethod
+    def is_valid_main_sequence_spectral_class(spectral_class):
+        if spectral_class in ("O", "B", "A", "F", "G", "K", "M"):
+            return True
+        else:
+            return False
+```
+
+```{code} python
+:linenos:
+:emphasize-lines: 4-9
+class Star:
+    ...
+
+    @staticmethod
+    def is_valid_main_sequence_spectral_class(spectral_class):
+        if spectral_class in ("O", "B", "A", "F", "G", "K", "M"):
+            return True
+        else:
+            return False
+```
+
+Vi testar nu och ser:
+
+```{code-cell} ipython
+:tags: []
+
+print(f"F är giltig: {Star.is_valid_main_sequence_spectral_class("F")}")
+print(f"Z är giltig: {Star.is_valid_main_sequence_spectral_class("Z")}")
+```
+
+Se hur vi inte behövde ett objekt för detta. Vi anropar statiska metoder på klassen i första hand. Dock kommer alla instanser också ha en kopia av metoden.
