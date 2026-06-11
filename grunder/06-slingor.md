@@ -270,3 +270,64 @@ for _ in range(5):
 ```
 
 Iterationsvariabler får det särskilda namnet `_` som sedvanligt betyder att den är obetydlig. Det är en full giltig variabel, men att den heter `_` visar att vi inte bryr oss om den. Här itererar vi alltså över `0,1,2,3,4` vilket ger 5 st loopar.
+
+## Generatorfunktioner
+
+En vanlig funktion har ett returvärde. En _generatorfunktion_ kan returnera flera värden, en och en. Detta betyder att vi kan iterera över returvärdena av en generatorfunktion. Detta är inte mycket olika från att returnera en kollektion, för det går att iterera över det också, men fördelen med en generator är att varje element endast beräknas då det behövs och inte innan.
+
+Det går givetvis att skapa egna generatorfunktioner, men det kommer inte denna kurs att behandla. I stället är det mycket intressant att ta en titt på några inbyggda generatorer och hur de kan hjälpa er.
+
+### Iterera över både index och värde: `enumerate()`
+
+Det förekommer ibland att vi vill iterera över en kollektion och behandla både ett elements värde och index i loopen. Det går såklart att iterera över endast index och indexera in i kollektionen, men det är inte optimalt ur läslighetssynpunkt. I stället använder vi oss av generatorfunktionen `enumerate()`. Den tar en kollektion som argument och returnerar för varje iteration en tuple `(index, value)`. Vi kollar på ett exempel:
+
+```{code-cell} ipython
+:tags: []
+
+my_list = ["Word1", "Word2", "Word3"]
+
+for i, word in enumerate(my_list):
+    print(f"Word {i} is {word}")
+```
+
+eller kanske:
+
+```{code-cell} ipython
+:tags: []
+
+sentence = "Rymdforskarskolan är bra!"
+
+for i, char in enumerate(sentence):
+    print(f"Character {i} is {char}")
+```
+
+Använd detta med fördel i stället för `i in range(len(collection))` då det är smidigare och lättare att läsa!
+
+### Iterera över flera kollektioner samtidigt
+
+(zip)=
+
+Ibland har du kanske 2 eller fler listor som du vill behandla samtidigt. Om de är lika långa kan du använda generatorn `zip()` för att sammanfoga två eller fler iterabla värden som du anger som argument. Här kommer några exempel:
+
+```{code-cell} ipython
+:tags: []
+
+list1 = [1, 3, 6, 0]
+list2 = [3, 5, 12, 3]
+
+for value1, value2 in zip(list1, list2):
+    print(f"The value in list1: {value1}")
+    print(f"The value in list2: {value2}")
+    print()
+```
+
+```{code-cell} ipython
+:tags: []
+
+word1 = "Car"
+word2 = "Old"
+word3 = "The"
+
+for char1, char2, char3 in zip(word1, word2, word3):
+    print(f"Char1: {char1}, Char2: {char2}, Char3: {char3}")
+```
