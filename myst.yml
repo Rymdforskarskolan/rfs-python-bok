@@ -40,6 +40,11 @@ project:
     - title: Kapitel 2 - Mikrokontroller
       children:
         - file: mikrokontroller/01-vad_ar_en_mikrokontroller.md
+        - title: Elektroteknik
+          children:
+            - file: mikrokontroller/elektroteknik/01-elektroteknikens_grunder.md
+            - file: mikrokontroller/elektroteknik/02-enkla_komponenter.md
+            - file: mikrokontroller/elektroteknik/03-signaler.md
     - title: Kapitel 3 - Avancerade koncept
       children:
         - file: avancerat/01-avancerade_koncept.md
