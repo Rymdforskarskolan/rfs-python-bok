@@ -103,7 +103,7 @@ class Star:
         luminosity *= cls.SOLAR_LUMINOSITY
         diameter *= cls.SOLAR_DIAMETER
 
-        return Star(spectral_class, luminosity, surface_temp_K, diameter, mass)
+        return cls(spectral_class, luminosity, surface_temp_K, diameter, mass)
 
     def __str__(self):
         lines = [
@@ -134,7 +134,7 @@ class Star:
         ...
 ```
 
-Sedan, på slutet, tar vi och returnerar resultatet av att anropa konstruktorn. Vi skapar alltså bara ett nytt objekt med rätt värden som vi sen returnerar ut.
+Sedan, på slutet, tar vi och returnerar resultatet av att anropa konstruktorn. Att anropa klassen är ju att anropa konstruktorn, och `cls` motsvarar vår klass, så vi anropa den. Vi skapar alltså bara ett nytt objekt med rätt värden som vi sen returnerar ut.
 
 Kolla nu på hur vi kan tillämpa detta:
 
@@ -194,7 +194,7 @@ class Star:
         luminosity *= cls.SOLAR_LUMINOSITY
         diameter *= cls.SOLAR_DIAMETER
 
-        return Star(spectral_class, luminosity, surface_temp_K, diameter, mass)
+        return cls(spectral_class, luminosity, surface_temp_K, diameter, mass)
 
     def __str__(self):
         lines = [
