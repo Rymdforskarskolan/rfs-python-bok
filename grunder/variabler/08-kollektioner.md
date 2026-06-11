@@ -213,6 +213,10 @@ Som jag snuddade på i rubriken om mängder är `str` egentligen bara en lista m
 
 Du kan indexera en sträng precis som en lista. Exempelvis får du `"hej"[1] -> "e"`. Detta är ju ytterst användbart ifall du vill kolla värdet av en viss bokstav eller position i din sträng.
 
+## Att plocka ut delar av en kollektion
+
+Likt en `str` kan du använda _slicenotation_ för att ta ut en del av en kollektion. Det funkar exakt likadant som med strängar. Se [kapitlet om stränghatering](./05-strangar_och_text.md#slicing).
+
 ## `in`-operatorn
 
 Python har en mycket kraftfull operator som heter `in`, och dess invers heter `not in`. Denna operator kollar ifall elementet till vänster finns med i kollektionen till höger. Förs listor, tuples och mängder är detta självförklarligt. För en `dict` kollar `in` om värdet till höger existerar bland nycklarna och för en sträng kollas ifall strängen till vänster uppkommer någonstans i högerledet. Här följer ett antal exempel.
@@ -275,4 +279,59 @@ Vi kollar alltså om vänsterledet är någon av de delsträngarna. Här kommer 
 "c" in "abcdefghijklmnopqrstuvwxyzåäö" # True
 "abc" in "abcefghijklmnopqrstuvwxyzåäö" # True
 "df" in "abcdefghijklmnopqrstuvwxyzåäö" # False
+```
+
+## Comprehensions: ett sätt att bygga kollektioner
+
+Det förekommer ofta att man behöver konstruera en kollektion genom att tillämpa en funktion, metod eller beräkning på ett värde från en annan kollektion eller iterabelt värde. [Slingor](../06-slingor.md) och [iteration](../06-slingor.md#for-slingan) behandlas i senare kapitel, men hur dessa koncept används för _comprehensions_ är mest relevant att placera här.
+
+En `list`-comprehension skrivs såhär:
+
+```python
+[expr_with_value for value in iterable]
+```
+
+Notera samma parenteser som för en `list`. Detta är analogt med en [`for`-slinga](../06-slingor.md#for-slingan). Resultatet är en lista med ett element för varje element `iterable` ovan och elementen är värdet av `expr_with_value` för varje `value` i `iterable`. Vi kikar på ett exempel
+
+```{code-cell} ipython
+:tags: []
+
+import math
+
+square_roots = [math.sqrt(num) for num in range(10)]
+print(f"{square_roots=}")
+
+strings = ["HelLO THerE", "RymDForSKArSKoLAn", "ETT SKRIK"]
+
+lower_strings = [string.lower() for string in strings]
+print(f"{lower_strings=}")
+```
+
+Man hade kunnat uppnå samma sak genom att skapa en tom lista, iterera med en `for`-slinga, och lägga till varje element med `list.append()` men en `list`-comprehension är mycket smidigare och lättare att läsa! Det rekommenderas starkt att ni använder dessa!
+
+### Comprehension för annat är `list`
+
+Grundidén är densamma. Det är bara parentesen som är annorlunda. Se nedan former:
+
+```python
+# tuple
+(expr_with_value for value in iterable)
+
+# set
+{expr_with_value for value in iterable}
+
+# dict
+{expr_for_key: expr_for_value for value1, value2, ... in iterable}
+```
+
+`tuple` och `set` är ganska självförklarliga. Däremot tar `dict` en lite annan form. Grundtanken är att du vill skriva en "mall" för varje nyckel-värde-par i din blivande `dict`. Ofta är det då nödvändigt, men inte ett krav, att iterera över flera värden samtidigt. Vi kan kolla på ett illustrerande exempel. Notera att vi använder `zip()` här som du kan läsa om i kapitlet om [generatorer](../06-slingor.md#zip).
+
+```{code-cell} ipython
+:tags: []
+
+names = ["Alva", "Jonas", "Miriam"]
+grades = [15, 22, 11.5]
+
+gradebook = {name: grade for name, grade in zip(names, grades)}
+print(gradebook)
 ```

@@ -8,6 +8,15 @@ kernelspec:
 
 I Python lagras som sagt text och bokstäver i en _sträng_, en `str` i kod. Det är i praktiken en lista av bokstäver. Det betyder att du kan utöka den med fler bokstäver för att bygga en större sträng.
 
+## Hur får man in en blankrad i en sträng?
+
+När vi skriver strängar finns det ett antal _escape sequences_ som uppnår speciella effekter. Den vanligaste sådana är _newline_ (`\n`). Skriver du `\n` i en sträng kommer en blankrad att dyka upp där. Du skall varken ha mellanslag innan eller efter sekvensen, om inte du explicit vill ha det. En sträng kan exempelvis vara `f"Användaren heter:\n{name}"`, vilket för `name="Marcell"` hade givit
+
+```python
+Användare heter:
+Marcell
+```
+
 ## Att addera strängar
 
 Man kan alltså sammanfoga två strängar för att skapa en ny sträng. Detta heter _concatenation_ på engelska och görs med `+` operatorn.
@@ -76,6 +85,30 @@ print(lista.split(","))
 
 mening = "Astrid gick till skolan."
 print(mening.split(" "))
+```
+
+### Att plocka ut en delsträng
+
+(slicing)=
+
+Vi kan använda någonting som heter _slicenotation_ för att betrakta endast en _delsträng_ i en större sträng. Då indexerar vi in i strängen med `[start:stop]` där vi läser strängen från och _med_ `start` till, men _inte med_ `stop`.
+
+Här följer ett exempel:
+
+```{code-cell} ipython
+:tags: []
+
+my_string = "Många ord"
+print(f"Positioner 3 och 4: {my_string[3:5]}")
+```
+
+Du kan även börja från början genom att utelämna `start` och gå till slutet genom att utelämna `stop`.
+
+```{code-cell} ipython
+:tags: []
+
+print(f"Från början till 4: {my_string[:4]}")
+print(f"Från och med 3 till slutet: {my_string[3:]}")
 ```
 
 ## Att sammanfoga många strängar
