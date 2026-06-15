@@ -44,7 +44,8 @@ project:
           children:
             - file: mikrokontroller/elektroteknik/01-elektroteknikens_grunder.md
             - file: mikrokontroller/elektroteknik/02-enkla_komponenter.md
-            - file: mikrokontroller/elektroteknik/03-signaler.md
+            - file: mikrokontroller/elektroteknik/03-enkla_kretsar.md
+            - file: mikrokontroller/elektroteknik/04-signaler.md
     - title: Kapitel 3 - Avancerade koncept
       children:
         - file: avancerat/01-avancerade_koncept.md

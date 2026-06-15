@@ -14,25 +14,7 @@ elm.style(elm.STYLE_IEC)
 ohm = 'Ω'
 ```
 
-Våra kretsar för mikrokontroller består oftast av några enkla komponenter:
-
-- Ledningar (kablar)
-- Resistorer
-- LED:er
-- Batterier
-  - och andra likströmskällor
-- Strömbrytare (knappar)
-
-Kretsarna utökas sedan med mer komplexa komponenter:
-
-- Potentiometrar
-- Diverse IC:n (Integrated Circuits)
-  - Sensorer
-  - Klockor
-  - m.m.
-- Kondensatorer (mer sällan)
-
-Vi börjar dock med de enkla komponenterna och arbetar oss upp till att kunna skapa fullstora kretsar.
+Detta kapitel behandlar de allra enklaste komponenter. När jag säger "enkel" menar jag tyvärr inte nödvändigtvis "lätt att förstå", utan snarare att dessa komponenter har minst komplicerad funktion och relativt lite matte kopplat till sig.
 
 ## Ledningar
 
@@ -113,6 +95,17 @@ Om källan specifikt är ett batteri ser det ur såhär:
 
 with schemdraw.Drawing():
   elm.BatteryCell().up().label("5 V")
+```
+
+eller ibland såhär:
+
+```{code-cell} ipython
+:tags: [remove-input]
+
+with schemdraw.Drawing():
+  elm.Line().dot(open=True)
+  elm.Gap().label(( "-","5V","+") )
+  elm.Line().idot(open=True)
 ```
 
 ## Strömbrytare
