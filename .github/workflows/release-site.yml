@@ -38,6 +38,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install jupyter-book ipykernel
+          pip install -r requirements.txt
           python -m ipykernel install --name=python3 --display-name "Python 3 (ipykernel)" --sys-prefix
 
       - name: Build HTML Assets
