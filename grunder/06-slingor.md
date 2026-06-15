@@ -303,9 +303,9 @@ for i, char in enumerate(sentence):
 
 Använd detta med fördel i stället för `i in range(len(collection))` då det är smidigare och lättare att läsa!
 
-### Iterera över flera kollektioner samtidigt
-
 (zip)=
+
+### Iterera över flera kollektioner samtidigt
 
 Ibland har du kanske 2 eller fler listor som du vill behandla samtidigt. Om de är lika långa kan du använda generatorn `zip()` för att sammanfoga två eller fler iterabla värden som du anger som argument. Här kommer några exempel:
 

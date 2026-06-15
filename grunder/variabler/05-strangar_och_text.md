@@ -87,9 +87,9 @@ mening = "Astrid gick till skolan."
 print(mening.split(" "))
 ```
 
-### Att plocka ut en delsträng
-
 (slicing)=
+
+### Att plocka ut en delsträng
 
 Vi kan använda någonting som heter _slicenotation_ för att betrakta endast en _delsträng_ i en större sträng. Då indexerar vi in i strängen med `[start:stop]` där vi läser strängen från och _med_ `start` till, men _inte med_ `stop`.
 

@@ -4,9 +4,10 @@ kernelspec:
   display_name: Python 3
 ---
 
+(collections)=
+
 # Kollektioner
 
-(collections)=
 En kollektion är en datatyp som innehåller mer än ett värde. De kollektioner som finns inbyggda i Python är `list`, `tuple`, `set` och `dict`. De alla är i grunden sätt att samla relaterad data, men de uppnår det på lite olika sätt.
 
 ## `list` — En ordnad lista med föränderlig längd

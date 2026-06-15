@@ -1,18 +1,21 @@
 ---
 kernelspec:
-    name: python3
-    display_name: Python 3
+  name: python3
+  display_name: Python 3
 ---
 
+(convert-data)=
 
 # Att ändra datatyp
-(convert-data)=
+
 Vissa saker går bara att göra med värden av samma typ. Till exempel jämförelser eller aritmetik. Det hade väl varit konstigt att fråga om `"a" > 3`, eller hur? Ibland dyker det dock upp likartade värden som borde gå att jämföra, som `"5" > 3`. Detta verkar som att det borde vara `True`, men egentligen så kommer ni att få ett fel om ni testar.
 
 ```{code} ipython
 print("5" > 3)
 ```
+
 Koden ovan, om ni kör den, ger ett fel likt denna:
+
 ```
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
@@ -27,6 +30,7 @@ Det beror på att det inte finns en definierad procedur för hur `>` skall bedö
 [^str]: Om man nu inte tänker på bokstäver som UTF-8 kodpunkter, vilka är heltal... Men det skulle inte en vanlig användare göra, och strängar kan vara mer än en bokstav varefter denna likhet slutar.
 
 I python kan vi använda våra inbyggda datatyper som funktioner för att konvertera från en datatyp till en annan. Vi kan till exempel göra om vår text-5:a till en `int`.
+
 ```{code-cell} ipython
 :tags: []
 

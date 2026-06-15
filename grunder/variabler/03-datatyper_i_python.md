@@ -1,7 +1,8 @@
+(datatyper-i-python)=
+
 # Datatyper i Python
 
-(datatyper-i-python)=
-Python är ett språk med s.k. *dynamiska typer*. Det betyder att en variabels typ är inte spikad när den skapas, utan den kan ändras över tid. Däremot så har vid varje givet ögonblick varje variabel en typ. Det kan vara ett heltal, ett flyttal eller något helt annat. Python listar själv ut vad för typ en variabel ska ha, så det behöver du oftast inte skriva ned själv.
+Python är ett språk med s.k. _dynamiska typer_. Det betyder att en variabels typ är inte spikad när den skapas, utan den kan ändras över tid. Däremot så har vid varje givet ögonblick varje variabel en typ. Det kan vara ett heltal, ett flyttal eller något helt annat. Python listar själv ut vad för typ en variabel ska ha, så det behöver du oftast inte skriva ned själv.
 
 ## Heltal
 
@@ -17,8 +18,8 @@ Du kan specificera ett flyttal som ett vanligt decimaltal med decimalpunkt allts
 
 ## Sant-falsk värden
 
-Ett värde som kan vara sant eller falsk kallas ett *boolskt* värde eller en *boolean*. Den lagras i typen `bool`. Python använder nyckelorden `True` och `False` (notera stor bokstav i början) för att representera dessa värden. I bakgrunden är de bara en 1:a och en 0:a i minnet. Det däremot är *inte* ekvivalent att skriva 1 / 0 i stället för `True` / `False`!
+Ett värde som kan vara sant eller falsk kallas ett _boolskt_ värde eller en _boolean_. Den lagras i typen `bool`. Python använder nyckelorden `True` och `False` (notera stor bokstav i början) för att representera dessa värden. I bakgrunden är de bara en 1:a och en 0:a i minnet. Det däremot är _inte_ ekvivalent att skriva 1 / 0 i stället för `True` / `False`!
 
 ## Text och typografi
 
-En bit text lagras i en *sträng* eller *string*. Datatypen heter `str`. Texten lagras i UTF-8 (Unicode) vilket innebär att alla symboler, emoji och bokstäver är okej att lagra där. En sträng är egentligen en lista med karaktärer, där varje karaktär är en bokstav, symbol etc.
+En bit text lagras i en _sträng_ eller _string_. Datatypen heter `str`. Texten lagras i UTF-8 (Unicode) vilket innebär att alla symboler, emoji och bokstäver är okej att lagra där. En sträng är egentligen en lista med karaktärer, där varje karaktär är en bokstav, symbol etc.
