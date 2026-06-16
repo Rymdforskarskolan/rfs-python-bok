@@ -53,7 +53,7 @@ U_1 = U_\mathrm{tot} \cdot \frac{R_1}{R_1 + R_2}
 samt att
 
 $$
-U_2 = U \cdot \frac{R_2}{R_1 + R_2}.
+U_2 = U_\mathrm{tot} \cdot \frac{R_2}{R_1 + R_2}.
 $$
 
 (stromdelning)=
@@ -557,3 +557,49 @@ with schemdraw.Drawing():
 ```
 
 Du ser alltså makten av en tvåpolsreduktion: denna nya ekvivalenta krets är mycket mer överskådlig, särskilt om vi vill byta ut komponenten mellan A och B.
+
+## Spänningsdelaren
+
+Den enda kretsen jag ordagrant kommer att rita ut är spänningsdelaren. Den är oerhört användbar inte bara för att kunna styra saker utan också för att mäta resistans. En Spänningsdelare är två seriekopplade resistorer såhär:
+
+```{figure} ./voltage-divider.png
+En spänningsdelare med samtliga spänningar angivna.
+```
+
+Om vi ansätter att potentialen är 0 V vid spänningskällans minuspol så kommer potentialen innan $R_1$ att vara $V_\text{in} = U_\text{in}$.
+
+Spänningen över resistorn $R_1$ får vi enligt spänningsdelningslagen som
+
+$$
+U_1 = U_\text{in} \cdot \frac{R_1}{R_1 + R_2}
+$$
+
+och därmed får vi även potentialen $V_\text{ut}$ som
+
+$$
+V_\text{ut} = V_\text{in} - U_1 = U_\text{in} - U_1 = U_\text{in} - U_\text{in} \cdot \frac{R_1}{R_1 + R_2}
+$$
+
+eller slutligen
+
+$$
+V_\text{ut} = U_\text{in}\left(1 - \frac{R_1}{R_1 + R_2}\right)
+$$
+
+Vi kan variera värdet på ena eller båda resistorer (helst ena) och därmed variera vilken potential vi får i $V_\text{ut}$. Anledningen jag alltid nämner detta värde som potential är att spänning i en punkt inte är definierad. Spänning är en skillnad i potential.
+
+Spänningsdelaren kan utrustas med en variabel resistor, ofta i position $R_2$, för att ändra värdet på $V_\text{ut}$.
+
+Om vi kopplar den ledningen till exempelvis en mikrokontrollers analogpin kommer vi att kunna mäta potentialen. Då skulle kretsen se ut såhär:
+
+```{figure} ./voltage-divider-micro.png
+En spänningsdelare uppkopplad till en RP2040.
+```
+
+Notera att analogpinnen mäter spänning jämfört med GND, och vår minuspol för delaren är också GND. Därför kommer A1 att läsa spänning
+
+$$
+U_\text{A1} = 3.3 - U_1 = U_2
+$$
+
+enligt Kirchhoff II då matningsspänningen är 3.3 V.
